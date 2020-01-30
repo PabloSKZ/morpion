@@ -8,6 +8,7 @@ class Board
     end
 
     def modify(box, player)
+        # Empêche le joueur de saisir une case déjà joué ou inexistante
         if player == 1 && @hash[box] == "."
             @hash[box] = "X"
             return true

@@ -13,13 +13,13 @@ class Game
         correct_input = false
         victory = false
         while !correct_input && !victory
-            puts @board_to_show.show_board(@board.hash)
+            puts @board_to_show.show_board(@board.hash) # Affiche le board contenu dans un hash
             puts "\n\n"
             puts "#{@player1.name}, à toi de jouer !"
             puts "Quelle case veux tu marquer ?"
             print "> "
             box = gets.chomp
-            correct_input = @board.modify(box, 1)
+            correct_input = @board.modify(box, 1) # Modifie la value de la key (A1, A2 ...) par un X
             puts "\n\n"
             victory = check_victory
         end
@@ -31,7 +31,7 @@ class Game
             puts "Quelle case veux tu marquer ?"
             print "> "
             box = gets.chomp
-            correct_input = @board.modify(box, 2)
+            correct_input = @board.modify(box, 2) # Modifie la value de la key (A1, A2 ...)  par un O
             puts "\n\n"
             victory = check_victory
         end
@@ -39,6 +39,7 @@ class Game
     end
 
     def check_victory
+        # Check toutes les possibilitées de victoire
         if (@board.hash['A1'] == 'X' && @board.hash['A2'] == 'X' && @board.hash['A3'] == 'X') || (@board.hash['B1'] == 'X' && @board.hash['B2'] == 'X' && @board.hash['B3'] == 'X') || (@board.hash['C1'] == 'X' && @board.hash['C2'] == 'X' && @board.hash['C3'] == 'X') || (@board.hash['A1'] == 'X' && @board.hash['B1'] == 'X' && @board.hash['C1'] == 'X') || (@board.hash['A2'] == 'X' && @board.hash['B2'] == 'X' && @board.hash['C2'] == 'X') || (@board.hash['A3'] == 'X' && @board.hash['B3'] == 'X' && @board.hash['C3'] == 'X') || (@board.hash['A1'] == 'X' && @board.hash['B2'] == 'X' && @board.hash['C3'] == 'X') || (@board.hash['A3'] == 'X' && @board.hash['B2'] == 'X' && @board.hash['C3'] == 'X')
             puts "\n\n"
             puts @board_to_show.show_board(@board.hash)

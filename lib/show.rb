@@ -1,6 +1,7 @@
 class Show 
     attr_accessor :board_to_show, :line1, :line2, :line3, :line4, :line5
 
+    # Affiche le board
     def initialize(board_hash)
         @line0 = "  1   2   3"
         @line1 = "A " + board_hash["A1"] + " | " + board_hash["A2"] + " | " + board_hash["A3"]

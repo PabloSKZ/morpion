@@ -9,7 +9,6 @@ require_relative 'lib/board_case'
 require_relative 'lib/show'
 
 #Accueil
-
 puts "-" * 13
 puts "|  MORPION  |"
 puts "-" * 13
@@ -48,8 +47,3 @@ while new_game
     end
     puts"\n\n"
 end
-
-
-binding.pry
-
-puts "end of code"
